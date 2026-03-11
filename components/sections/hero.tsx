@@ -1,14 +1,13 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
 import { cn } from "@/lib/utils"
 
 const bannerSlides = [
@@ -33,6 +32,7 @@ const bannerSlides = [
 export function HeroSection() {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const onSelect = useCallback(() => {
     if (!api) return
@@ -47,6 +47,21 @@ export function HeroSection() {
       api.off("select", onSelect)
     }
   }, [api, onSelect])
+
+  // Auto-advance slides
+  useEffect(() => {
+    if (!api) return
+
+    intervalRef.current = setInterval(() => {
+      api.scrollNext()
+    }, 5000)
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
+  }, [api])
 
   const scrollTo = useCallback(
     (index: number) => {
@@ -63,13 +78,6 @@ export function HeroSection() {
           loop: true,
           align: "start",
         }}
-        plugins={[
-          Autoplay({
-            delay: 5000,
-            stopOnInteraction: false,
-            stopOnMouseEnter: true,
-          }),
-        ]}
         className="w-full"
       >
         <CarouselContent className="ml-0">
