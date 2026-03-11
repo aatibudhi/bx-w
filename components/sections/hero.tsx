@@ -12,20 +12,16 @@ import { cn } from "@/lib/utils"
 
 const bannerSlides = [
   {
-    src: "/images/hero-banner.png",
-    alt: "BrightAxis AI - AI Solutions for the Next Generation of Businesses",
+    src: "/images/hero-data-platform.png",
+    alt: "Solutions for the Next Generation of Data Platform",
   },
   {
-    src: "/images/hero-banner-2.png",
-    alt: "BrightAxis AI - Solutions for the Next Generation of Data Platform",
+    src: "/images/hero-intelligent-automation.png",
+    alt: "Intelligent Automation - Streamline Workflows, Enhance Productivity",
   },
   {
-    src: "/images/hero-banner-3.png",
-    alt: "BrightAxis AI - Intelligent Automation - Streamline Workflows",
-  },
-  {
-    src: "/images/hero-banner-4.png",
-    alt: "BrightAxis AI - AI Consulting - Expert Guidance for Your AI Strategy",
+    src: "/images/hero-ai-consulting.png",
+    alt: "AI Solutions for the Next Generation of Businesses - AI Consulting, Expert Guidance for Your AI Strategy",
   },
 ]
 
@@ -83,7 +79,7 @@ export function HeroSection() {
         <CarouselContent className="ml-0">
           {bannerSlides.map((slide, index) => (
             <CarouselItem key={index} className="pl-0">
-              <div className="relative w-full h-[400px] sm:h-[480px] lg:h-[560px]">
+              <div className="relative w-full h-[440px] sm:h-[528px] lg:h-[616px]">
                 <Image
                   src={slide.src}
                   alt={slide.alt}

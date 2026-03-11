@@ -58,17 +58,17 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/images/logo.png"
                 alt="BrightAxis AI"
-                width={40}
-                height={40}
-                className="h-10 w-10"
+                width={56}
+                height={56}
+                className="h-12 w-12 sm:h-14 sm:w-14 shrink-0"
               />
-              <span className="text-xl font-bold tracking-tight">
+              <span className="text-2xl font-bold tracking-tight sm:text-3xl">
                 Bright<span className="text-primary">Axis</span>
               </span>
             </Link>
