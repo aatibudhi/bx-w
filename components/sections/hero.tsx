@@ -48,28 +48,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Trust badges section below the banner */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="bg-background py-12 border-b border-border/50"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm text-muted-foreground text-center mb-6">Trusted by AI-first companies</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-            {["Acme Corp", "Velocity AI", "NexGen Tech", "DataFlow", "Quantum Labs"].map((company) => (
-              <span
-                key={company}
-                className="text-lg font-semibold text-muted-foreground"
-              >
-                {company}
-              </span>
-            ))}
-          </div>
-        </div>
-      </motion.div>
     </section>
   )
 }
